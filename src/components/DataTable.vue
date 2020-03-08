@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import dataSource from "../assets/data.json";
+
 
 export default {
   name: "DataTable",
@@ -46,17 +46,15 @@ export default {
       sortColumn: ""
     };
   },
+  props:{
+    rows: Array
+  },
   computed: {
-    contacts() {
-      return dataSource.contacts.map(item => {
-        return item;
-      });
-    },
     columns() {
-      if (this.contacts.length === 0) {
+      if (this.rows.length === 0) {
         return [];
       }
-      return Object.keys(this.contacts[0]);
+      return Object.keys(this.rows[0]);
     }
   },
   methods: {
@@ -68,7 +66,7 @@ export default {
         this.sortColumn = col;
       }
       var ascending = this.ascending;
-      this.contacts.sort((a, b) => {
+      this.rows.sort((a, b) => {
         if (a[col] > b[col]) {
           return ascending ? 1 : -1;
         } else if (a[col] < b[col]) {
@@ -77,12 +75,12 @@ export default {
       });
     },
     num_pages() {
-      return Math.ceil(this.contacts.length / this.elementsPerPage);
+      return Math.ceil(this.rows.length / this.elementsPerPage);
     },
     get_rows() {
       var start = (this.currentPage - 1) * this.elementsPerPage;
       var end = start + this.elementsPerPage;
-      return this.contacts.slice(start, end);
+      return this.rows.slice(start, end);
     },
     change_page(page) {
       this.currentPage = page;

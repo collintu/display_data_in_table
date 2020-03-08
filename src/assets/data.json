@@ -9,6 +9,7 @@
         { "id": 7, "name": "Rachel Green",   "phone": "765-338-0312", "profession": "Waitress",          "address": ""},
         { "id": 8, "name": "Monica Geller",  "phone": "714-541-3336", "profession": "Head Chef",         "address": ""},
         { "id": 9, "name": "Joey Tribbiani", "phone": "972-297-6037", "profession": "Actor",             "address": ""},
-        { "id": 10, "name": "Phoebe Buffay",  "phone": "760-318-8376", "profession": "Masseuse",          "address": ""}
+        { "id": 10, "name": "Phoebe Buffay",  "phone": "760-318-8376", "profession": "Masseuse",          "address": ""},
+        { "id": 11, "name": "Chandler Bing",  "phone": "305-917-1301", "profession": "IT Manager",        "address": ""}
     ]
 }

@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <data-table></data-table>
+    <data-table :rows="contacts"></data-table>
   </div>
 </template>
 
 <script>
 import DataTable from "./components/DataTable.vue";
+import dataSource from "./assets/data.json";
 
 export default {
   name: "App",
   components: {
     DataTable
+  },
+  computed: {
+    contacts() {
+      return dataSource.contacts.map(item => {
+        return item;
+      });
+    }  
   }
 };
 </script>
